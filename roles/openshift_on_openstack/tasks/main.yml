@@ -173,7 +173,7 @@
 
 # Run the Ansible playbook that creates the OpenStack resources.
 - name: Creating the OpenStack resources
-  shell: "{{ ansible_playbook }} -vvv --user openshift -i inventory {{ openshift_openstack_dir }}/openshift-cluster/provision_install.yaml -e openshift_repos_enable_testing=true 2>&1 > {{ openshift_install_log }}"
+  shell: "{{ ansible_playbook }} -vvv --user openshift -i inventory {{ openshift_openstack_dir }}/openshift-cluster/provision_install.yml -e openshift_repos_enable_testing=true 2>&1 > {{ openshift_install_log }}"
   args:
     # Use bash to get the posix style redirects.
     executable: /bin/bash

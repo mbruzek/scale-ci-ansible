@@ -14,8 +14,8 @@ all_yml:
   - { find: "^#openshift_openstack_lb_flavor:.*", replace: "openshift_openstack_lb_flavor: \"load_balancer\"" }
   - { find: "^openshift_openstack_default_flavor:.*", replace: "openshift_openstack_default_flavor: \"m1.medium\"" }
   # - { find: "^#manage_packages.*", replace: "manage_packages: false"}
-  # Do not use Cinder volumes. TODO: Remove this once Cinder is working.
-  # - { find: "^#ephemeral_volumes.*", replace: "ephemeral_volumes: true"}
+  # Use VM storage only, no Cinder at this time.
+  - { find: "^# openshift_openstack_ephemeral_volumes.*", replace: "openshift_openstack_ephemeral_volumes: true"}
 # The OpenStack image name to use in the templates.
 default_image_name: "{{ lookup('env', 'default_image_name')|default('ocp-3.7-rhel', true) }}"
 # The path to the OpenStack RC file on the server vm, may be named differently than other servers.
