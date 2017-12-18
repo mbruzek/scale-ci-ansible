@@ -18,7 +18,7 @@ openstack_security_group_name: "{{ lookup('env', 'security_group_name')|default(
 # The name of the flavor to use for the OpenShift install server.
 openstack_server_flavor: "{{ lookup('env', 'server_flavor')|default('node_average', true) }}"
 # The name of the image to use for the OpenShift install server.
-openstack_server_image: "{{ lookup('env', 'server_image')|default('ocp-3.7-rhel', true) }}"
+openstack_server_image: "{{ lookup('env', 'server_image')|default(virtual_image_name, true) }}"
 # The name of the server to use for the OpenShift install server.
 openstack_server_name: "{{ lookup('env', 'server_name')|default('ansible-host', true) }}"
 # The name of the private subnet for the OpenShift install server.
