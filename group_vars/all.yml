@@ -8,6 +8,6 @@ install_directory: "{{ ansible_user_dir }}/scale-ci"
 # The version of OpenShift Container Platform to install and test.
 ocp_major_minor: "{{ lookup('env', 'ocp_major_minor')|default('3.9', true) }}"
 # The properties file contains the keys and values for the next job.
-properties_file: "{{ lookup('env', 'properties_file')|default('next.properties', true) }}"
+properties_file: "{{ lookup('env', 'properties_file')|default('./next.properties', true) }}"
 # The virtual image name to use in OpenStack when creating virtual servers.
 virtual_image_name: "{{ lookup('env', 'default_image_name')|default('ocp-' ~ ocp_major_minor ~ '-rhel', true) }}"
