@@ -197,7 +197,7 @@
 
 # Configure the time servers on all the provisioned nodes.
 - name: Configuring the time servers on all the provisioned nodes
-  shell: "{{ ansible_playbook }} -vv configure_time_servers.yml 2>&1 >> {{ time_servers_log }}"
+  shell: "{{ ansible_playbook }} -vv -i inventory configure_time_servers.yml 2>&1 >> {{ time_servers_log }}"
   args:
     # Use bash to get the posix style redirects.
     executable: /bin/bash
