@@ -167,7 +167,7 @@
   with_items: "{{ debug_information['results'] }}"
 
 # Set the path for the OpenShift install log file.
-- name: Creating the OpenShift instal log file variable
+- name: Creating the OpenShift install log file variable
   set_fact:
     openshift_install_log: "{{ ansible_user_dir }}/openshift_install.log"
 
